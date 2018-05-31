@@ -9,11 +9,12 @@ class HangpersonGame
   # Updates the correct guess word and returns true if the user
   # enters the correct guess, otherwise returns false
   def guess(letter)
-    if !@guesses.include?(letter) && !@wrong_guesses.include?(letter)
+    if !@guesses.include?(letter.downcase) &&
+     !@wrong_guesses.include?(letter.downcase)
         if @word.include?(letter)
-          @guesses << letter
+          @guesses << letter.downcase
         else 
-          @wrong_guesses << letter
+          @wrong_guesses << letter.downcase
         end
         return true
     else
