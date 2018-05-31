@@ -20,14 +20,8 @@ class HangpersonGame
   # Updates the correct guess word and returns true if the user
   # enters the correct guess, otherwise returns false
   def guess(letter)
-    #byebug
-    if @word.include?(letter)
-      @guesses << letter
-      return true
-    else
-      @wrong_guesses << letter
-      return true
-    end
+    @word.include?(letter) ?  @guesses << letter :  @wrong_guesses << letter
+    return true
   end
 
   # You can test it by running $ bundle exec irb -I. -r app.rb
