@@ -17,6 +17,17 @@ class HangpersonGame
     @wrong_guesses = ''
   end
 
+  # Updates the correct guess word and returns true if the user
+  # enters the correct guess, otherwise returns false
+  def guess(letter)
+    #byebug
+    if @word.include?(letter)
+      @guesses << letter
+      return true
+    end
+    return false
+  end
+
   # You can test it by running $ bundle exec irb -I. -r app.rb
   # And then in the irb: irb(main):001:0> HangpersonGame.get_random_word
   #  => "cooking"   <-- some random word
