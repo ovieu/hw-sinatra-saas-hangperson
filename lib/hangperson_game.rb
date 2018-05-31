@@ -24,8 +24,10 @@ class HangpersonGame
     if @word.include?(letter)
       @guesses << letter
       return true
+    else
+      @wrong_guesses << letter
+      return false
     end
-    return false
   end
 
   # You can test it by running $ bundle exec irb -I. -r app.rb
