@@ -9,12 +9,14 @@ class HangpersonGame
   # Updates the correct guess word and returns true if the user
   # enters the correct guess, otherwise returns false
   def guess(letter)
+    unless @guesses.include?(letter) 
       if @word.include?(letter)
         @guesses << letter
       else 
         @wrong_guesses << letter
       end
       return true
+    end
   end
 
   # Get a word from remote "random word" service
