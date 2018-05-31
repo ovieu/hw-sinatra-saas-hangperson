@@ -26,7 +26,7 @@ class HangpersonGame
       return true
     else
       @wrong_guesses << letter
-      return false
+      return true
     end
   end
 
