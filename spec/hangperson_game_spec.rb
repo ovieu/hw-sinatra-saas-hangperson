@@ -80,7 +80,7 @@ describe HangpersonGame do
       it 'throws an error when empty' do
         expect { @game.guess('') }.to raise_error(ArgumentError)
       end
-      it 'throws an error when not a letter' do
+      it 'throws an error when not a letter'do
         expect { @game.guess('%') }.to raise_error(ArgumentError)
       end
       it 'throws an error when nil' do
@@ -89,7 +89,7 @@ describe HangpersonGame do
     end
   end
 
-  describe 'displayed word with guesses', :pending => true do
+  describe 'displayed word with guesses' do
     before :each do
       @game = HangpersonGame.new('banana')
     end
