@@ -9,6 +9,8 @@ class HangpersonGame
   # Updates the correct guess word and returns true if the user
   # enters the correct guess, otherwise returns false
   def guess(letter)
+    raise ArgumentError.new("Guess is empty") if letter.empty?
+
     if !@guesses.include?(letter.downcase) &&
      !@wrong_guesses.include?(letter.downcase)
         if @word.include?(letter)
