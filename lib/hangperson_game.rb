@@ -9,7 +9,9 @@ class HangpersonGame
   # Updates the correct guess word and returns true if the user
   # enters the correct guess, otherwise returns false
   def guess(letter)
-    raise ArgumentError.new("Guess is empty") if letter.empty?
+    if letter.empty?
+      raise ArgumentError.new("Guess is empty") 
+    end
 
     # => raise error when not a letter
     raise ArgumentError.new("Guess is not a letter") if /[^a-zA-Z]/ =~ (letter)
