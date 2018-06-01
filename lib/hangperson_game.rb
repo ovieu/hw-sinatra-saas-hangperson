@@ -41,6 +41,22 @@ class HangpersonGame
     end
   end
 
+  # => helper method to help create the dislpay string
+  def create_dashed_display_string(word)
+    guess_string = ""
+    word.length.times {
+      guess_string << "-"
+    }
+    guess_string
+  end
+
+  # => returns a string that displays all the guess word
+  # => with the correctly guessed letters visible
+  def word_with_guesses
+
+  end
+
+
   # Get a word from remote "random word" service
   # You can test it by running $ bundle exec irb -I. -r app.rb
   # And then in the irb: irb(main):001:0> HangpersonGame.get_random_word
