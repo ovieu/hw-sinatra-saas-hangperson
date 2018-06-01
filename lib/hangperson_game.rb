@@ -11,6 +11,9 @@ class HangpersonGame
   def guess(letter)
     raise ArgumentError.new("Guess is empty") if letter.empty?
 
+    # => raise error when not a letter
+    raise ArgumentError.new("Guess is not a letter") if /[^a-zA-Z]/ =~ (letter)
+
     if !@guesses.include?(letter.downcase) &&
      !@wrong_guesses.include?(letter.downcase)
         if @word.include?(letter)
