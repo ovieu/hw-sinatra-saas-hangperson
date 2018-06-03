@@ -50,10 +50,24 @@ class HangpersonGame
     guess_string
   end
 
+  # => inserts the correclty guessed letter into the string
+  def insert_guess_letter_to_dash(display_word, guesses, word)
+      guesses.each_char { |guess_char|
+      word.each_char.with_index{ |word_char, index|
+        if guess_char == word_char
+          display_word[index] = guess_char
+        end
+      }
+    }
+    return display_word
+  end
+
   # => returns a string that displays all the guess word
   # => with the correctly guessed letters visible
   def word_with_guesses
-
+    display_word = create_dashed_display_string(@word)
+    display_word = insert_guess_letter_to_dash(display_word, @guesses, @word)
+    # => display_word
   end
 
 
