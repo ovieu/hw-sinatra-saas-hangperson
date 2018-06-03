@@ -67,8 +67,21 @@ class HangpersonGame
   def word_with_guesses
     display_word = create_dashed_display_string(@word)
     display_word = insert_guess_letter_to_dash(display_word, @guesses, @word)
-    # => display_word
+    display_word
   end
+
+    # => checks if the user won or lost
+  def check_win_or_lose
+    return :lose if @wrong_guesses.length == 7
+    
+    if @guesses.length == @word.length &&
+      !@guesses.include?("-")
+      return :win
+    end
+
+    return "play".to_sym
+  end
+
 
 
   # Get a word from remote "random word" service
